@@ -1,0 +1,102 @@
+table enrolments
+	lineageTag: d0055bc4-9f91-4093-90cd-4ae82f3013b0
+
+	column enrolment_id
+		dataType: string
+		lineageTag: 97e9adc5-2496-4aff-b9a4-a443bf07edb7
+		summarizeBy: none
+		sourceColumn: enrolment_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column student_id
+		dataType: string
+		lineageTag: c9bb1cf5-c2c9-44e9-9f36-5c2cf39b6431
+		summarizeBy: none
+		sourceColumn: student_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column course_id
+		dataType: string
+		lineageTag: 9a301252-f5e1-4180-8f22-68871cc5d07d
+		summarizeBy: none
+		sourceColumn: course_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column department
+		dataType: string
+		lineageTag: 9b7ca314-e6e3-4206-987f-b67abcacec64
+		summarizeBy: none
+		sourceColumn: department
+
+		annotation SummarizationSetBy = Automatic
+
+	column level
+		dataType: string
+		lineageTag: 79f48fbb-09f1-4e89-8dfc-141fcbbc627f
+		summarizeBy: none
+		sourceColumn: level
+
+		annotation SummarizationSetBy = Automatic
+
+	column credits
+		dataType: string
+		lineageTag: 32b1b015-aa84-40c2-9321-09835a0c4e14
+		summarizeBy: none
+		sourceColumn: credits
+
+		annotation SummarizationSetBy = Automatic
+
+	column enrolment_date
+		dataType: string
+		lineageTag: 015ffe40-5f8c-4e69-8a88-1d5acce8d893
+		summarizeBy: none
+		sourceColumn: enrolment_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column status
+		dataType: string
+		lineageTag: 9eded854-12df-4a98-b5ea-48e4f133a7da
+		summarizeBy: none
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_completed
+		dataType: string
+		lineageTag: 68f215d8-af1d-4a57-b9d8-2c69ca718339
+		summarizeBy: none
+		sourceColumn: is_completed
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_withdrawn
+		dataType: string
+		lineageTag: e5f6fb54-5c77-49d0-9299-56e2c26fc8e8
+		summarizeBy: none
+		sourceColumn: is_withdrawn
+
+		annotation SummarizationSetBy = Automatic
+
+	column age_at_enrolment
+		dataType: string
+		lineageTag: 4a58d69c-1371-4d37-ab13-b13f8e91dc07
+		summarizeBy: none
+		sourceColumn: age_at_enrolment
+
+		annotation SummarizationSetBy = Automatic
+
+	partition enrolments = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("alwswvisiugelbmnqth6fnaynu-hm2cbdnpkysudmzyhzpjgyay5e.datawarehouse.fabric.microsoft.com", "lh_edu"),
+				    dbo_enrolments = Source{[Schema="dbo",Item="enrolments"]}[Data]
+				in
+				    dbo_enrolments
+
+	annotation PBI_ResultType = Table
+

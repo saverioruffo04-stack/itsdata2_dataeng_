@@ -1,0 +1,32 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "4d1fe6090b007733b495",
+  "position": {
+    "x": 96.108455722603622,
+    "y": 190.437125228122,
+    "z": 1000,
+    "height": 80.090379768836357,
+    "width": 160.18075953767271,
+    "tabOrder": 52
+  },
+  "visual": {
+    "visualType": "textSlicer",
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'inserisci azienda'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "parentGroupName": "720b78618167420263a6"
+}

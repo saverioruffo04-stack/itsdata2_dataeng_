@@ -1,0 +1,65 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "59a9fbd572d199e30814",
+  "position": {
+    "x": 30.666666666666664,
+    "y": 457.33333333333331,
+    "z": 5000,
+    "height": 350,
+    "width": 346.66666666666669,
+    "tabOrder": 3005
+  },
+  "visual": {
+    "visualType": "listSlicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "students"
+                    }
+                  },
+                  "Property": "programme"
+                }
+              },
+              "queryRef": "students.programme",
+              "nativeQueryRef": "programme",
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "general": [
+        {
+          "properties": {}
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "parentGroupName": "08390fa340c06c409b08",
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "e52df1ae4344c4922132",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "students"
+              }
+            },
+            "Property": "programme"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

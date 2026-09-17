@@ -1,0 +1,101 @@
+table students
+	lineageTag: 08ff22ad-405d-4121-81a0-6d59b49db81b
+	sourceLineageTag: [dbo].[students]
+
+	column student_id
+		dataType: string
+		lineageTag: 2be64524-d02a-40cb-b5ed-8e7018f00c4b
+		sourceLineageTag: student_id
+		summarizeBy: none
+		sourceColumn: student_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column programme
+		dataType: string
+		lineageTag: af024dee-08c6-432f-b66b-30adb36141ae
+		sourceLineageTag: programme
+		summarizeBy: none
+		sourceColumn: programme
+
+		annotation SummarizationSetBy = Automatic
+
+	column department
+		dataType: string
+		lineageTag: 96737044-a769-478e-b451-a6498fde74ae
+		sourceLineageTag: department
+		summarizeBy: none
+		sourceColumn: department
+
+		annotation SummarizationSetBy = Automatic
+
+	column level
+		dataType: string
+		lineageTag: acf9cea1-91b1-41ab-8a7f-014b01d1337d
+		sourceLineageTag: level
+		summarizeBy: none
+		sourceColumn: level
+
+		annotation SummarizationSetBy = Automatic
+
+	column cohort_year
+		dataType: string
+		lineageTag: be2ead80-dc34-452b-82d5-a4190981ab6e
+		sourceLineageTag: cohort_year
+		summarizeBy: none
+		sourceColumn: cohort_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column enrolment_date
+		dataType: string
+		lineageTag: 62de53e5-8053-4332-baee-3ae6453a010f
+		sourceLineageTag: enrolment_date
+		summarizeBy: none
+		sourceColumn: enrolment_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column status
+		dataType: string
+		lineageTag: 485469f7-e237-42a1-bd59-6a52967b6386
+		sourceLineageTag: status
+		summarizeBy: none
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	column gender
+		dataType: string
+		lineageTag: fe2b2da4-9d72-4cdb-89e8-a336feaa980c
+		sourceLineageTag: gender
+		summarizeBy: none
+		sourceColumn: gender
+
+		annotation SummarizationSetBy = Automatic
+
+	column region
+		dataType: string
+		lineageTag: aff70108-eb55-4d49-a672-45d8081ba4d6
+		sourceLineageTag: region
+		summarizeBy: none
+		sourceColumn: region
+
+		annotation SummarizationSetBy = Automatic
+
+	column age_at_enrolment
+		dataType: string
+		lineageTag: 8b7572a3-ddfa-4188-a755-d39b2e955411
+		sourceLineageTag: age_at_enrolment
+		summarizeBy: none
+		sourceColumn: age_at_enrolment
+
+		annotation SummarizationSetBy = Automatic
+
+	partition students = entity
+		mode: directLake
+		source
+			entityName: students
+			schemaName: dbo
+			expressionSource: 'DirectLake - lh_edu'
+

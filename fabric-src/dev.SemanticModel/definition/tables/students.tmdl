@@ -1,0 +1,94 @@
+table students
+	lineageTag: 7b4477ac-6656-4c28-863b-fd4a550975d9
+
+	column student_id
+		dataType: string
+		lineageTag: 42b5bcdc-7727-4e7f-80f4-b4d894f9aa7f
+		summarizeBy: none
+		sourceColumn: student_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column programme
+		dataType: string
+		lineageTag: d2c80011-abf5-406c-af8e-ec8c71637725
+		summarizeBy: none
+		sourceColumn: programme
+
+		annotation SummarizationSetBy = Automatic
+
+	column department
+		dataType: string
+		lineageTag: 65d6eb0a-4aa5-4ee6-ac25-543f333f37a5
+		summarizeBy: none
+		sourceColumn: department
+
+		annotation SummarizationSetBy = Automatic
+
+	column level
+		dataType: string
+		lineageTag: 3d60cfff-d451-4496-8c98-4577d2c9272e
+		summarizeBy: none
+		sourceColumn: level
+
+		annotation SummarizationSetBy = Automatic
+
+	column cohort_year
+		dataType: string
+		lineageTag: d2a0561c-487e-4fd5-b0ea-fc8224c16a2f
+		summarizeBy: none
+		sourceColumn: cohort_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column enrolment_date
+		dataType: string
+		lineageTag: e0af2567-13d0-45c7-878d-215aa2b81d76
+		summarizeBy: none
+		sourceColumn: enrolment_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column status
+		dataType: string
+		lineageTag: d73e8546-04d7-4002-8154-35b531608982
+		summarizeBy: none
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	column gender
+		dataType: string
+		lineageTag: e305e55b-8eab-4ff6-b01e-5953e82ecd75
+		summarizeBy: none
+		sourceColumn: gender
+
+		annotation SummarizationSetBy = Automatic
+
+	column region
+		dataType: string
+		lineageTag: d898efdb-6214-420e-8341-662da94ff591
+		summarizeBy: none
+		sourceColumn: region
+
+		annotation SummarizationSetBy = Automatic
+
+	column age_at_enrolment
+		dataType: string
+		lineageTag: 67353c3b-ff2b-473e-a93e-be9f89ffef79
+		summarizeBy: none
+		sourceColumn: age_at_enrolment
+
+		annotation SummarizationSetBy = Automatic
+
+	partition students = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("alwswvisiugelbmnqth6fnaynu-hm2cbdnpkysudmzyhzpjgyay5e.datawarehouse.fabric.microsoft.com", "lh_edu"),
+				    dbo_students = Source{[Schema="dbo",Item="students"]}[Data]
+				in
+				    dbo_students
+
+	annotation PBI_ResultType = Table
+

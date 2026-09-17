@@ -1,0 +1,83 @@
+table platform_events
+	lineageTag: 5aeb5092-b328-4b55-956b-b798740f693f
+	sourceLineageTag: [dbo].[platform_events]
+
+	column event_id
+		dataType: string
+		lineageTag: 68ae754c-d728-4998-9683-bc37e301d025
+		sourceLineageTag: event_id
+		summarizeBy: none
+		sourceColumn: event_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column student_id
+		dataType: string
+		lineageTag: 0ed2feaf-50e5-4dca-941c-d6bdea2dc33b
+		sourceLineageTag: student_id
+		summarizeBy: none
+		sourceColumn: student_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column course_id
+		dataType: string
+		lineageTag: dc22f028-a12c-4801-b9d4-8acb0212a8cd
+		sourceLineageTag: course_id
+		summarizeBy: none
+		sourceColumn: course_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column timestamp
+		dataType: string
+		lineageTag: 5bfdb3a9-ab7f-448a-8522-dba751f78f7f
+		sourceLineageTag: timestamp
+		summarizeBy: none
+		sourceColumn: timestamp
+
+		annotation SummarizationSetBy = Automatic
+
+	column event_type
+		dataType: string
+		lineageTag: a76266d5-5a91-4b64-bcf9-fe5e80acee33
+		sourceLineageTag: event_type
+		summarizeBy: none
+		sourceColumn: event_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column session_duration_secs
+		dataType: string
+		lineageTag: 8e09d284-6372-4df8-ae92-00643fbb4318
+		sourceLineageTag: session_duration_secs
+		summarizeBy: none
+		sourceColumn: session_duration_secs
+
+		annotation SummarizationSetBy = Automatic
+
+	column platform
+		dataType: string
+		lineageTag: d9f2366f-fcd2-4fdb-8066-278f3439193e
+		sourceLineageTag: platform
+		summarizeBy: none
+		sourceColumn: platform
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_error
+		dataType: string
+		lineageTag: 2363c56d-49c8-4acd-b151-5bf0f9aa35ea
+		sourceLineageTag: is_error
+		summarizeBy: none
+		sourceColumn: is_error
+
+		annotation SummarizationSetBy = Automatic
+
+	partition platform_events = entity
+		mode: directLake
+		source
+			entityName: platform_events
+			schemaName: dbo
+			expressionSource: 'DirectLake - lh_edu'
+

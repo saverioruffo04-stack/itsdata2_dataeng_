@@ -1,0 +1,4 @@
+relationship e9be9720-2021-6b81-560e-c1719163e738
+	fromColumn: enrolments.student_id
+	toColumn: students.student_id
+

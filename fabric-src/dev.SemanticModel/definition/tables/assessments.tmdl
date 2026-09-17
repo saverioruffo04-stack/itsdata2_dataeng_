@@ -1,0 +1,110 @@
+table assessments
+	lineageTag: ce0d6cfa-b258-4dc6-9c13-5ed3de5e2c99
+
+	column assessment_id
+		dataType: string
+		lineageTag: 6b1505a6-4f70-45e0-a671-8ecc1506ba27
+		summarizeBy: none
+		sourceColumn: assessment_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column enrolment_id
+		dataType: string
+		lineageTag: 6640af85-99db-4cdb-84be-6806101dfe80
+		summarizeBy: none
+		sourceColumn: enrolment_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column student_id
+		dataType: string
+		lineageTag: 826f6edc-d1a6-429b-be0a-257d44a6a4d0
+		summarizeBy: none
+		sourceColumn: student_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column course_id
+		dataType: string
+		lineageTag: 38e6937c-d6f8-4cf6-b081-46b1d734f34f
+		summarizeBy: none
+		sourceColumn: course_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column department
+		dataType: string
+		lineageTag: 5439f0cf-b387-45f2-8127-6a9a7705b10e
+		summarizeBy: none
+		sourceColumn: department
+
+		annotation SummarizationSetBy = Automatic
+
+	column assessment_type
+		dataType: string
+		lineageTag: 96d9ec22-3139-4c40-b175-b015a86eb266
+		summarizeBy: none
+		sourceColumn: assessment_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column attempt_number
+		dataType: string
+		lineageTag: cae630c2-b77d-47bb-8d96-9d8ad89b2e85
+		summarizeBy: none
+		sourceColumn: attempt_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column submitted_date
+		dataType: string
+		lineageTag: c024cafb-6198-45fe-b029-29752786dd29
+		summarizeBy: none
+		sourceColumn: submitted_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column score
+		dataType: string
+		lineageTag: 0d2dc8aa-242a-4cda-9ef0-a857ffbf0425
+		summarizeBy: none
+		sourceColumn: score
+
+		annotation SummarizationSetBy = Automatic
+
+	column grade
+		dataType: string
+		lineageTag: 4e64793f-b44f-4981-a2d3-8d483f390cfb
+		summarizeBy: none
+		sourceColumn: grade
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_pass
+		dataType: string
+		lineageTag: e3d64832-2167-41b4-acd3-7b786a979754
+		summarizeBy: none
+		sourceColumn: is_pass
+
+		annotation SummarizationSetBy = Automatic
+
+	column word_count
+		dataType: string
+		lineageTag: bbb73c92-a4b8-4f3e-8118-d2cd0267f59f
+		summarizeBy: none
+		sourceColumn: word_count
+
+		annotation SummarizationSetBy = Automatic
+
+	partition assessments = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("alwswvisiugelbmnqth6fnaynu-hm2cbdnpkysudmzyhzpjgyay5e.datawarehouse.fabric.microsoft.com", "lh_edu"),
+				    dbo_assessments = Source{[Schema="dbo",Item="assessments"]}[Data]
+				in
+				    dbo_assessments
+
+	annotation PBI_ResultType = Table
+

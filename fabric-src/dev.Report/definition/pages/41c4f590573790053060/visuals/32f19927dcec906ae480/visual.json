@@ -1,0 +1,158 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "32f19927dcec906ae480",
+  "position": {
+    "x": 490,
+    "y": 650,
+    "z": 5000,
+    "height": 376,
+    "width": 688
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "enrolments"
+                    }
+                  },
+                  "Property": "student_id"
+                }
+              },
+              "queryRef": "enrolments.student_id",
+              "nativeQueryRef": "student_id"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "assessments"
+                    }
+                  },
+                  "Property": "score"
+                }
+              },
+              "queryRef": "CountNonNull(assessments.score)",
+              "nativeQueryRef": "score1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "students"
+                    }
+                  },
+                  "Property": "programme"
+                }
+              },
+              "queryRef": "students.programme",
+              "nativeQueryRef": "programme"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "assessments"
+                  }
+                },
+                "Property": "score"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "columnAdjustment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'growToFit'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "d5da4a43844024101e83",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "assessments"
+              }
+            },
+            "Property": "score"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "7455aa11b5adc3341c81",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "enrolments"
+              }
+            },
+            "Property": "student_id"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "886a2ac7e50176b49099",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "students"
+              }
+            },
+            "Property": "programme"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}
