@@ -32,6 +32,7 @@
                 }
               },
               "queryRef": "Product.Product Hierarchy.Category",
+              "nativeQueryRef": "Product Hierarchy Category",
               "active": true
             },
             {
@@ -51,6 +52,7 @@
                 }
               },
               "queryRef": "Product.Product Hierarchy.Segment",
+              "nativeQueryRef": "Product Hierarchy Segment",
               "active": true
             },
             {
@@ -70,6 +72,7 @@
                 }
               },
               "queryRef": "Product.Product Hierarchy.Product",
+              "nativeQueryRef": "Product Hierarchy Product",
               "active": true
             }
           ]
@@ -92,7 +95,8 @@
                   "Function": 0
                 }
               },
-              "queryRef": "Sum(Sales.Revenue)"
+              "queryRef": "Sum(Sales.Revenue)",
+              "nativeQueryRef": "Revenue"
             },
             {
               "field": {
@@ -105,7 +109,8 @@
                   "Property": "Bar"
                 }
               },
-              "queryRef": "Sales.Bar"
+              "queryRef": "Sales.Bar",
+              "nativeQueryRef": "Bar"
             },
             {
               "field": {
@@ -148,7 +153,8 @@
                   "Operator": 3
                 }
               },
-              "queryRef": "Divide(Sum(Sales.Revenue), ScopedEval(Sum(Sales.Revenue), []))"
+              "queryRef": "Divide(Sum(Sales.Revenue), ScopedEval(Sum(Sales.Revenue), []))",
+              "nativeQueryRef": "%TG Revenue"
             }
           ]
         }
@@ -176,6 +182,83 @@
         ]
       }
     },
+    "expansionStates": [
+      {
+        "roles": [
+          "Rows"
+        ],
+        "levels": [
+          {
+            "queryRefs": [
+              "Product.Product Hierarchy.Category"
+            ],
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Product"
+                    }
+                  },
+                  "Property": "Category"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "Product.Product Hierarchy.Segment"
+            ],
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Product"
+                    }
+                  },
+                  "Property": "Segment"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "Product.Product Hierarchy.Product"
+            ],
+            "isCollapsed": true,
+            "isPinned": true
+          }
+        ],
+        "root": {
+          "children": [
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'Urban'"
+                  }
+                }
+              ],
+              "children": [
+                {
+                  "identityValues": [
+                    {
+                      "Literal": {
+                        "Value": "'Extreme'"
+                      }
+                    }
+                  ],
+                  "isToggled": true
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
     "objects": {
       "columnFormatting": [
         {
@@ -933,6 +1016,140 @@
           ]
         },
         "howCreated": "Drill"
+      },
+      {
+        "name": "006ff10600851a192cb7",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Product"
+                  }
+                },
+                "Hierarchy": "Product Hierarchy"
+              }
+            },
+            "Level": "Category"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "da8199d983c5bd300945",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Product"
+                  }
+                },
+                "Hierarchy": "Product Hierarchy"
+              }
+            },
+            "Level": "Segment"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "ec987e0247365d017140",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Product"
+                  }
+                },
+                "Hierarchy": "Product Hierarchy"
+              }
+            },
+            "Level": "Product"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "b4fdccfb05801ea70b6d",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Sales"
+                  }
+                },
+                "Property": "Revenue"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "a22699d9a805c7190b34",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Sales"
+              }
+            },
+            "Property": "Bar"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "bd1969a1dbbb1ac85620",
+        "field": {
+          "Arithmetic": {
+            "Left": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Sales"
+                      }
+                    },
+                    "Property": "Revenue"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "Right": {
+              "ScopedEval": {
+                "Expression": {
+                  "Aggregation": {
+                    "Expression": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Sales"
+                          }
+                        },
+                        "Property": "Revenue"
+                      }
+                    },
+                    "Function": 0
+                  }
+                },
+                "Scope": []
+              }
+            },
+            "Operator": 3
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }
