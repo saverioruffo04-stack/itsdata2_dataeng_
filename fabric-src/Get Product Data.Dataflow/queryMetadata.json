@@ -1,0 +1,22 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {
+    "allowModernEvaluationEngine": true
+  },
+  "name": "Get Product Data",
+  "queryGroups": [],
+  "documentLocale": "it-IT",
+  "queriesMetadata": {
+    "products": {
+      "queryId": "90478231-fb68-4f3a-a0b2-a64d5acb13fa",
+      "queryName": "products"
+    }
+  },
+  "connections": [
+    {
+      "path": "https://raw.githubusercontent.com/MicrosoftLearning/dp-data/refs/heads/main/products.csv",
+      "kind": "Web",
+      "connectionId": "{\"ClusterId\":\"80cdbc4a-2a0e-4fad-9b09-0020c22e7867\",\"DatasourceId\":\"2c380516-8f7c-426a-94d7-89a59bfc3e55\"}"
+    }
+  ]
+}
